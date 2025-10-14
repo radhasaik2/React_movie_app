@@ -1,171 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie-App</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .icon {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .search-bar {
-            flex: 1;
-            max-width: 400px;
-            margin: 0 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .location-select {
-            position: relative;
-        }
-        .location-select select {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555;
-            padding: 7px;
-            border-radius: 3px;
-        }
-        .movies-section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .movies-section h2 {
-            margin-bottom: 30px;
-            color: #000;
-        }
-        .movie-div {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .movie-link {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        .movie-link:hover {
-            transform: scale(1.05);
-        }
-        .movie-link img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-        .movie-link h3 {
-            padding: 10px;
-            margin: 0;
-            font-size: 18px;
-        }
-        .rating {
-            color: orangered;
-        }
-        .genre{
-            color: dimgrey;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .icon {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .search-bar {
+        flex: 1;
+        max-width: 400px;
+        margin: 0 20px;
+      }
+      .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .location-select {
+        position: relative;
+      }
+      .location-select select {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #555;
+        padding: 7px;
+        border-radius: 3px;
+      }
+      .movies-section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .movies-section h2 {
+        margin-bottom: 30px;
+        color: #000;
+      }
+      .movie-div {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .movie-link {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .movie-link:hover {
+        transform: scale(1.05);
+      }
+      .movie-link img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      .movie-link h3 {
+        padding: 10px;
+        margin: 0;
+        font-size: 18px;
+      }
+      .rating {
+        color: orangered;
+      }
+      .genre {
+        color: dimgrey;
+      }
+      footer {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      footer .footer-content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="icon">Moviez</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for movies...">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#movies">Movies</a></li>
-                <li class="location-select">
-                    <select>
-                        <option>Location</option>
-                        <option>Visakhapatnam</option>
-                        <option>Vijayawada</option>
-                        <option>Viziangaram</option>
-                        <option>Hyderabad</option>
-                        <option>bangalore</option>
-                        <option>Mysore</option>
-                        <option>Warngal</option>
-                        <option>Delhi</option>
-                        <option>Kolkata</option>
-                        <option>Chennai</option>
-                        <option>kerala</option>
-                        <option>bhuvaneswar</option>
-                        <option>mumbai</option>
-                    </select>
-                </li>
-                <li><a href="#signin">Sign In / Login</a></li>
-                <li><a href="#support">Support</a></li>
-            </ul>
-        </nav>
+      <div class="icon">Moviez</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for movies..." />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#movies">Movies</a></li>
+          <li class="location-select">
+            <select>
+              <option>Location</option>
+              <option>Visakhapatnam</option>
+              <option>Vijayawada</option>
+              <option>Viziangaram</option>
+              <option>Hyderabad</option>
+              <option>bangalore</option>
+              <option>Mysore</option>
+              <option>Warngal</option>
+              <option>Delhi</option>
+              <option>Kolkata</option>
+              <option>Chennai</option>
+              <option>kerala</option>
+              <option>bhuvaneswar</option>
+              <option>mumbai</option>
+            </select>
+          </li>
+          <li><a href="#signin">Sign In / Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="movies-section" id="movies">
-        <h2>Featured Movies</h2>
-        <div class="movie-div">
-            <div class="movie-link">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4YX41aXPvObz3NY7Zf44qK6LlQGA0gsnmqA&s" alt="Shin-chan Movie Poster">
-                <h3>Crayon Shin-chan the Movie: Super Hot! The Spicy Kasukabe Dancers</h3>
-                <h3 class="rating">8.8/10 250+Likes</h3>
-                <h3 class="genre">Comedy/Action/Adventure</h3>
-            </div>
-            <div class="movie-link">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8eiRxKhNlimzGKM6RkJ-WF0CsIZ5x5MxVw&s" alt="DemonSlayer Movie Poster">
-                <h3>Demon Slayer: Kimetsu no Yaiba Infinity Castle</h3>
-                <h3 class="rating">9.8/10 10k+Likes</h3>
-                <h3 class="genre">Thriller/Action/Adventure</h3>
-            </div>
-            <div class="movie-link">
-                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSlacjk-N2t0Ool13mp3eZJAHGCfN-ce_J6qt6BsL08mYbzeJetpHS2kTjRzy8kZMVHdP_OnA" alt="Chainsaw Man Movie Poster">
-                <h3>Chainsaw Man - The Movie: Reze Arc</h3>
-                <h3 class="rating">9.0/10 450+Likes</h3>
-                <h3 class="genre">Comedy/Action/Thriller</h3>
-            </div>
-            <div class="movie-link">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1wRH-F9T9hqurHuDoBw-9QtbPISgILytGw&s" alt="Your Name Movie Poster">
-                <h3>Your Name</h3>
-                <h3 class="rating">9.5/10 950+Likes</h3>
-                <h3 class="genre">Drama/Sci-Fi/Romantic</h3>
-            </div>
+      <h2>Featured Movies</h2>
+      <div class="movie-div">
+        <div class="movie-link">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4YX41aXPvObz3NY7Zf44qK6LlQGA0gsnmqA&s"
+            alt="Shin-chan Movie Poster"
+          />
+          <h3>
+            Crayon Shin-chan the Movie: Super Hot! The Spicy Kasukabe Dancers
+          </h3>
+          <h3 class="rating">8.8/10 250+Likes</h3>
+          <h3 class="genre">Comedy/Action/Adventure</h3>
         </div>
+        <div class="movie-link">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8eiRxKhNlimzGKM6RkJ-WF0CsIZ5x5MxVw&s"
+            alt="DemonSlayer Movie Poster"
+          />
+          <h3>Demon Slayer: Kimetsu no Yaiba Infinity Castle</h3>
+          <h3 class="rating">9.8/10 10k+Likes</h3>
+          <h3 class="genre">Thriller/Action/Adventure</h3>
+        </div>
+        <div class="movie-link">
+          <img
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSlacjk-N2t0Ool13mp3eZJAHGCfN-ce_J6qt6BsL08mYbzeJetpHS2kTjRzy8kZMVHdP_OnA"
+            alt="Chainsaw Man Movie Poster"
+          />
+          <h3>Chainsaw Man - The Movie: Reze Arc</h3>
+          <h3 class="rating">9.0/10 450+Likes</h3>
+          <h3 class="genre">Comedy/Action/Thriller</h3>
+        </div>
+        <div class="movie-link">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1wRH-F9T9hqurHuDoBw-9QtbPISgILytGw&s"
+            alt="Your Name Movie Poster"
+          />
+          <h3>Your Name</h3>
+          <h3 class="rating">9.5/10 950+Likes</h3>
+          <h3 class="genre">Drama/Sci-Fi/Romantic</h3>
+        </div>
+      </div>
     </section>
-</body>
+
+    <footer>
+      <div class="footer-content">
+        <div class="icon">Moviez</div>
+        <p>&copy; 2025 Moviez. All rights reserved.</p>
+        <a href="#support">Support</a>
+        <a href="#legal">Legal Info</a>
+      </div>
+    </footer>
+  </body>
 </html>
