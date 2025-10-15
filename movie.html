@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -103,6 +103,26 @@
       .genre {
         color: dimgrey;
       }
+      footer {
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      footer .footer-content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -133,7 +153,6 @@
             </select>
           </li>
           <li><a href="#signin">Sign In / Login</a></li>
-          <li><a href="#support">Support</a></li>
         </ul>
       </nav>
     </header>
@@ -181,5 +200,13 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="icon">Moviez</div>
+        <p>&copy; 2025 Moviez. All rights reserved.</p>
+        <a href="#support">Support</a>
+      </div>
+    </footer>
   </body>
 </html>
