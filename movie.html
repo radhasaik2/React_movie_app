@@ -6,61 +6,55 @@
     <title>Movie-App</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: Arial;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: honeydew;
       }
       header {
-        background-color: #000;
-        color: #fff;
+        background-color: white;
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
       .icon {
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 39px;
+        font-weight: bolder;
+        color: black;
+        padding-left: 170px;
       }
       .search-bar {
         flex: 1;
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 20px;
       }
       .search-bar input {
         width: 100%;
         padding: 10px;
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
+        border-radius: 15px;
+        font-size: 15px;
+        background-color: beige;
       }
       nav ul {
         list-style: none;
         display: flex;
         margin: 0;
         padding: 0;
-        gap: 20px;
+        gap: 29px;
       }
       nav a {
-        color: #fff;
+        color: black;
         text-decoration: none;
-        font-size: 16px;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      .location-select {
-        position: relative;
+        font-size: 19px;
       }
       .location-select select {
-        background-color: #333;
-        color: #fff;
+        background-color: beige;
+        color: black;
         border: 1px solid #555;
         padding: 7px;
-        border-radius: 3px;
+        border-radius: 13px;
       }
       .movies-section {
         padding: 40px 20px;
@@ -68,34 +62,30 @@
       }
       .movies-section h2 {
         margin-bottom: 30px;
-        color: #000;
       }
       .movie-div {
-        display: grid;
+        display: grid; /*need to try 1 more way*/
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        max-width: 1200px;
+        gap: 19px;
+        max-width: 1250px;
         margin: 0 auto;
       }
       .movie-link {
-        background-color: #fff;
-        border-radius: 8px;
+        background-color: white;
+        border-radius: 9px;
         overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
       }
       .movie-link:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
       }
       .movie-link img {
         width: 100%;
-        height: 300px;
+        height: 350px;
         object-fit: cover;
       }
       .movie-link h3 {
-        padding: 10px;
         margin: 0;
-        font-size: 18px;
+        font-size: 15px;
       }
       .rating {
         color: orangered;
@@ -104,24 +94,29 @@
         color: dimgrey;
       }
       footer {
-        background-color: #000;
-        color: #fff;
+        background-color: lavender;
+        color: white;
         padding: 20px;
-        text-align: center;
         margin-top: 40px;
       }
-      footer .footer-content {
+      .footer-div {
+        color: black;
         display: flex;
         justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 15px;
+        /* flex-wrap: wrap; */
       }
-      footer a {
-        color: #fff;
-        text-decoration: none;
+      #footer-icon {
+        font-size: 39px;
+        font-weight: bolder;
+        padding-right: 130px;
       }
-      footer a:hover {
+      ol a:hover {
         text-decoration: underline;
+      }
+      ol a {
+        color: black;
+        text-decoration: none;
       }
     </style>
   </head>
@@ -133,7 +128,7 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#movies">Movies</a></li>
+          <li><a href="?movies">Movies</a></li>
           <li class="location-select">
             <select>
               <option>Location</option>
@@ -152,7 +147,7 @@
               <option>mumbai</option>
             </select>
           </li>
-          <li><a href="#signin">Sign In / Login</a></li>
+          <li><a href="#signin">SignIn</a></li>
         </ul>
       </nav>
     </header>
@@ -178,7 +173,7 @@
           />
           <h3>Demon Slayer: Kimetsu no Yaiba Infinity Castle</h3>
           <h3 class="rating">9.8/10 10k+Likes</h3>
-          <h3 class="genre">Thriller/Action/Adventure</h3>
+          <h3 class="genre">Adventure/Action</h3>
         </div>
         <div class="movie-link">
           <img
@@ -202,10 +197,12 @@
     </section>
 
     <footer>
-      <div class="footer-content">
-        <div class="icon">Moviez</div>
+      <div class="footer-div">
+        <div id="footer-icon">Moviez</div>
         <p>&copy; 2025 Moviez. All rights reserved.</p>
-        <a href="#support">Support</a>
+        <ol id="ol">
+          <a href="?support">support</a>
+        </ol>
       </div>
     </footer>
   </body>
