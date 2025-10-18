@@ -4,61 +4,117 @@
     <title>React App</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: Arial;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: honeydew;
       }
       header {
-        background-color: #000;
-        color: #fff;
+        background-color: white;
         padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
       .icon {
-        font-size: 24px;
-        font-weight: bold;
+        font-size: 39px;
+        font-weight: bolder;
+        color: black;
+        padding-left: 170px;
       }
       .search-bar {
         flex: 1;
-        max-width: 400px;
+        max-width: 500px;
         margin: 0 20px;
       }
       .search-bar input {
         width: 100%;
         padding: 10px;
         border: none;
-        border-radius: 5px;
-        font-size: 16px;
+        border-radius: 15px;
+        font-size: 15px;
+        background-color: beige;
       }
       nav ul {
         list-style: none;
         display: flex;
         margin: 0;
         padding: 0;
-        gap: 20px;
+        gap: 29px;
       }
       nav a {
-        color: #fff;
+        color: black;
         text-decoration: none;
-        font-size: 16px;
-      }
-      nav a:hover {
-        text-decoration: underline;
-      }
-      .location-select {
-        position: relative;
+        font-size: 19px;
       }
       .location-select select {
-        background-color: #333;
-        color: #fff;
+        background-color: beige;
+        color: black;
         border: 1px solid #555;
         padding: 7px;
-        border-radius: 3px;
+        border-radius: 13px;
+      }
+      .movies-section {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .movies-section h2 {
+        margin-bottom: 30px;
+      }
+      .movie-div {
+        display: grid; /*need to try 1 more way*/
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 19px;
+        max-width: 1250px;
+        margin: 0 auto;
+      }
+      .movie-link {
+        background-color: white;
+        border-radius: 9px;
+        overflow: hidden;
+      }
+      .movie-link:hover {
+        transform: scale(1.03);
+      }
+      .movie-link img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+      }
+      .movie-link h3 {
+        margin: 0;
+        font-size: 15px;
+      }
+      .rating {
+        color: orangered;
+      }
+      .genre {
+        color: dimgrey;
+      }
+      footer {
+        background-color: lavender;
+        color: white;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .footer-div {
+        color: black;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        /* flex-wrap: wrap; */
+      }
+      #footer-icon {
+        font-size: 39px;
+        font-weight: bolder;
+        padding-right: 130px;
+      }
+      ol a:hover {
+        text-decoration: underline;
+      }
+      ol a {
+        color: black;
+        text-decoration: none;
       }
     </style>
   </head>
