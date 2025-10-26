@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home</title>
 </head>
 <body>
-<a href="movies?location=cityname/filtered=top-rated">movies</a>
+<a href="movies?location=cityname&filtered=top-ratedmovie.id">movies</a>
 <a href="signup">signup</a>
 <a href="signin">signin</a>
 <a href="customercare?profile">customercare</a>
