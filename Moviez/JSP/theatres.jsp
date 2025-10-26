@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Theatres</title>
 </head>
 <body>
-<form action="theatre">
-inox
-</form>
-<a href="seats?theatre=id">Seats</a>
+<h2>Theatres</h2>
+<a href="seats"><button>INOX Varun Beach,Beach Road</button></a><br>
+<a href="seats"><button>INOX ,Maddilapalem</button></a><br>
+<a href="seats"><button>Sree Kanya</button></a>
 </body>
 </html>
