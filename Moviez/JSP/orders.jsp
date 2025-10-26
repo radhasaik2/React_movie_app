@@ -8,9 +8,8 @@
 </head>
 <body>
 <form action="orders">
-order id<br>
-amount<br>
+Order id : 101<br>
+Total amount : $200<br>
 </form>
 </body>
 </html>
-
