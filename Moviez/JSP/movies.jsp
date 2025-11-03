@@ -71,7 +71,6 @@
 <section class="movies-section" id="movies">
     <h2>Featured Movies</h2>
     <div class="movie-div" id="movieContainer">
-        <!-- Movie 1 - Crayon Shin-chan -->
         <div class="movie-link" data-name="crayon shin-chan">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4YX41aXPvObz3NY7Zf44qK6LlQGA0gsnmqA&s" alt="Shin-chan Movie Poster">
             <p>Crayon Shin-chan the Movie: Super Hot! The Spicy Kasukabe Dancers</p>
@@ -84,8 +83,6 @@
             <p>Kento Kaku,Toshiyuki Morikawa,Satomi Kōrogi</p>  
             <a href="theatres"><button>Book Now</button></a>
         </div>
-        
-        <!-- Movie 2 - Demon Slayer -->
         <div class="movie-link" data-name="demon slayer">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8eiRxKhNlimzGKM6RkJ-WF0CsIZ5x5MxVw&s" alt="DemonSlayer Movie Poster">
             <p>Demon Slayer: Kimetsu no Yaiba Infinity Castle</p>
@@ -100,8 +97,6 @@
             <p>After such a long wait, Demon Slayer: Infinity Castle finally arrived — and I can honestly say it was worth every second.</p>
             <a href="theatres"><button>Book Now</button></a>
         </div>
-        
-        <!-- Movie 3 - Chainsaw Man -->
         <div class="movie-link" data-name="chainsaw man">
             <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSlacjk-N2t0Ool13mp3eZJAHGCfN-ce_J6qt6BsL08mYbzeJetpHS2kTjRzy8kZMVHdP_OnA" alt="Chainsaw Man Movie Poster">
             <p>Chainsaw Man - The Movie: Reze Arc</p>
@@ -114,8 +109,6 @@
             <p>Kikunosuke Toya,Tomori Kusunoki</p>  
             <a href="theatres"><button>Book Now</button></a>
         </div>
-        
-        <!-- Movie 4 - Your Name -->
         <div class="movie-link" data-name="your name">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1wRH-F9T9hqurHuDoBw-9QtbPISgILytGw&s" alt="Your Name Movie Poster">
             <p>Your Name</p>
@@ -130,7 +123,6 @@
         </div>
     </div>
 </section>
-
 <script>
 function filterMovies() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
@@ -138,8 +130,7 @@ function filterMovies() {
     
     movies.forEach(movie => {
         const movieName = movie.getAttribute('data-name').toLowerCase();
-        
-        // Check if movie name starts with the search term
+
         if (movieName.startsWith(searchTerm)) {
             movie.style.display = 'block';
         } else {
